@@ -1,0 +1,89 @@
+﻿@model EntitiesLayer.CustomersEL
+
+@{
+    ViewBag.Title = "ViewCustomers";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Detalles Clientes</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idCliente)
+        </dd>
+
+        <dt>
+            NOMBRE: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreCli)
+        </dd>
+
+        <dt>
+            APELLIDOS: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidoCli)
+        </dd>
+
+        <dt>
+            TELEFONO: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefonoCli)
+        </dd>
+
+        <dt>
+            DNI: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dniCli)
+        </dd>
+
+        <dt>
+            CORREO: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correoCli)
+        </dd>
+
+        <dt>
+            USUARIO: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioCli)
+        </dd>
+
+        <dt>
+            CLAVE: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.passwordCli)
+        </dd>
+
+        <dt>
+            HABILITAR: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activoCli)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "MaintaineCustomers")
+</p>

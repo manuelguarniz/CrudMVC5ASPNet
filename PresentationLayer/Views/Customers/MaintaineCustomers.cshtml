@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EntitiesLayer.CustomersEL>
+
+@{
+    ViewBag.Title = "MaintaineCustomers";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>MaintaineCustomers</h2>
+
+<p>
+    @Html.ActionLink("Nuevo Cliente", "CreateCustomers")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            APELLIDO
+        </th>
+        <th>
+            TELEFONO
+        </th>
+        <th>
+            DNI
+        </th>
+        <th>
+            CORREO
+        </th>
+        <th>
+            USUARIO
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidoCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefonoCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dniCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correoCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioCli)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditCustomers", new { idCustomer = item.idCliente }) |
+            @Html.ActionLink("Ver", "ViewCustomers", new { idCustomer = item.idCliente }) |
+            @Html.ActionLink("Eliminar", "DeleteCustomers", new { idCustomer = item.idCliente })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,83 @@
+﻿@model EntitiesLayer.ProductsEL
+
+@{
+    ViewBag.Title = "ViewProducts";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Detalle de Productos</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            ID: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idProducto)
+        </dd>
+
+        <dt>
+            Descripción: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcionProducto)
+        </dd>
+
+        <dt>
+            Detalle: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detalleProducto)
+        </dd>
+
+        <dt>
+            Tiempo Elaboración: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tiempoElab)
+        </dd>
+
+        <dt>
+            Incrementeo Producción: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incrementoxProduccion)
+        </dd>
+
+        <dt>
+            Disponibilidad: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disponibilidad)
+        </dd>
+
+        <dt>
+            Stock: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidadDisponible)
+        </dd>
+
+        <dt>
+            Imagen: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagen)
+            <img style="width:50px; height:50px;"
+                 src="~/Resources/@Html.DisplayFor(model => model.imagen)"
+                 class="img-responsive" alt="">
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "MaintaineProducts")
+</p>

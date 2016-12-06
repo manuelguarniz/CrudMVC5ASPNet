@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EntitiesLayer.CustomersEL>
+
+@{
+    ViewBag.Title = "CustomersDown";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Clientes de Baja</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            NOMBRE
+        </th>
+        <th>
+            APELLIDO
+        </th>
+        <th>
+            TELEFONO
+        </th>
+        <th>
+            DNI
+        </th>
+        <th>
+            CORREO
+        </th>
+        <th>
+            USUARIO
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apellidoCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefonoCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dniCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.correoCli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuarioCli)
+            </td>
+            <td>
+                @Html.ActionLink("Activar", "ActiveCustomersDown", new { idCustomer = item.idCliente })
+            </td>
+        </tr>
+    }
+
+</table>

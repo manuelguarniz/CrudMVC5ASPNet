@@ -1,0 +1,88 @@
+﻿@model EntitiesLayer.ProductsEL
+
+@{
+    ViewBag.Title = "DeleteProducts";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Eliminar Producto</h2>
+
+<h3>¿ Estas Seguro que deseas Eliminar ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idProducto)
+        </dd>
+
+        <dt>
+            Descripción: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcionProducto)
+        </dd>
+
+        <dt>
+            Detalle: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detalleProducto)
+        </dd>
+
+        <dt>
+            Tiempo Elaboración: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tiempoElab)
+        </dd>
+
+        <dt>
+            Incremento Producto: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.incrementoxProduccion)
+        </dd>
+
+        <dt>
+            Disponibilidad: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.disponibilidad)
+        </dd>
+
+        <dt>
+            Cantidad Disponible: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidadDisponible)
+        </dd>
+
+        <dt>
+            Imagen: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imagen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Regresar", "MaintaineProducts")
+        </div>
+    }
+</div>

@@ -1,0 +1,85 @@
+﻿@model EntitiesLayer.CustomersEL
+
+@{
+    ViewBag.Title = "DeleteCustomers";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Eliminar Clientes</h2>
+
+<h3>¿Estas Seguro que Eliminaras al Cliente?</h3>
+<div>
+    <hr />
+    <form method="post">
+
+        <dl class="dl-horizontal">
+            <dt hidden>
+                ID:
+            </dt>
+
+            <dd hidden>
+                <input type="hidden" name="lblId" value="@Html.DisplayFor(model => model.idCliente)" />
+            </dd>
+
+            <dt>
+                NOMBRE:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombreCli)
+            </dd>
+
+            <dt>
+                APELLIDOS:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.apellidoCli)
+            </dd>
+
+            <dt>
+                TELEFONO:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.telefonoCli)
+            </dd>
+
+            <dt>
+                DNI:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dniCli)
+            </dd>
+
+            <dt>
+                CORREO:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.correoCli)
+            </dd>
+
+            <dt>
+                USUARIO:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.usuarioCli)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" name="btnEliminar" /> |
+                @Html.ActionLink("Regresar", "MaintaineCustomers")
+            </div>
+        }
+
+    </form>
+</div>

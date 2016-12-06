@@ -1,0 +1,155 @@
+﻿@model IEnumerable<EntitiesLayer.ProductsEL>
+
+@{
+    ViewBag.Title = "MaintaineProducts";
+    Layout = "~/Views/MasterIntranet.cshtml";
+}
+
+<h2>Todo sobre tus Productos</h2>
+
+<p>
+
+    <!--<button type="button" class="btn btn-primary btn-md" data-toggle="modal" data-target="#myModal">
+    </button>-->
+    @Html.ActionLink("Nuevo Producto", "CreateProducts")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Descripcion
+        </th>
+        <th>
+            T. Elaboracion
+        </th>
+        <th>
+            Stock
+        </th>
+        <th>
+            Imagen
+        </th>
+        <th>
+            Controles
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcionProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tiempoElab)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidadDisponible)
+        </td>
+        <td>
+            <img style="width:50px; height:50px;"
+                 src="~/Resources/@Html.DisplayFor(modelItem => item.imagen)"
+                 class="img-responsive" alt="">
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "EditProducts", new { idProducto = item.idProducto }) |
+            @Html.ActionLink("Ver", "ViewProducts", new { idProducto = item.idProducto })
+        </td>
+    </tr>
+}
+
+</table>
+
+<!--<div id="dialog" title="Login">
+    <form method="post" action="../Inicio/VerificarAcceso">
+        <table>
+            <tr>
+                <td>Usuario:</td>
+                <td><input type="text" name="txtUsuario" value="" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="txtPassword" value="" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnIngresar" value="Ingresar" />
+                    <input type="reset" value="Limpiar" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+ Button trigger modal -->
+<!-- Modal 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Nuevo Productos</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form" method="post" action="../Products/MaintaineProducts">
+                    -------------------------------
+                        descripcionProducto, detalleProducto, tiempoElab, incrementoxProduccion,
+		                disponibilidad, cantidadDisponible, idCategoria, imagen    
+                    -------------------------------------
+                    <div class="form-group">
+                        <label>Descripción: </label>
+                        <input class="form-control" placeholder="Descripción" type="text" name="txtDesc">
+                        <p class="help-block">Procurrar descripcion no mayor a 300 caracteres</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Detalle: </label>
+                        <input class="form-control" type="text" name="txtdetalle" role="textbox"/>
+                        -------------------------------------
+                        <textarea class="form-control" rows="3" name="txtdetalle"></textarea>
+                        -------------------------------------
+                    </div>
+                    <div class="form-group">
+                        <label>Tiempo Elaboracion</label>
+                        <input class="form-control" placeholder="Ingresa: Numero + Medida (60m)" name="txtTiemElab">
+                    </div>
+                    <div class="form-group">
+                        <label>Cantidad Disponible</label>
+                        <input class="form-control" placeholder="stock" name="txtStock">
+                    </div>
+                    <div class="form-group">
+                        <label>Producto Disponible</label>
+                        <select class="form-control" name="cboDispo">
+                            <option value="1">Disponible</option>
+                            <option value="0">No Disponible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        @{
+                            //List<EntitiesLayer.CategoriesEL> cate = (List<EntitiesLayer.CategoriesEL>)Session["categorias"];
+                        }
+                        <label>Categorias</label>
+                        <select class="form-control" name="cboCate">
+                            @{
+                                /*foreach (var c in cate)
+                                {
+                                    @Html.DisplayFor(modelItem => c.idCategoria)
+                                    <option value="@c.idCategoria">@c.descripcionCat</option>
+                                }*/
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen</label>
+                        <input type="file" name="fileImagen">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>-->
