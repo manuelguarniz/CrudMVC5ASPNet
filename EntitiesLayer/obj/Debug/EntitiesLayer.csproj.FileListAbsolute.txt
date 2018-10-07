@@ -1,9 +1,0 @@
-E:\Trabajos\WEB\EW\SistemaFloristeria\SistemaFloristeria\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-E:\Trabajos\WEB\EW\SistemaFloristeria\SistemaFloristeria\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-E:\Trabajos\WEB\EW\SistemaFloristeria\SistemaFloristeria\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
-E:\Trabajos\WEB\EW\SistemaFloristeria\SistemaFloristeria\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-E:\Trabajos\WEB\EW\SistemaFloristeria\SistemaFloristeria\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
-C:\Users\Docente\Documents\oneseven-sistemafloristeria-a2653ea0c9c5\oneseven-sistemafloristeria-a2653ea0c9c5\EntitiesLayer\bin\Debug\EntitiesLayer.dll
-C:\Users\Docente\Documents\oneseven-sistemafloristeria-a2653ea0c9c5\oneseven-sistemafloristeria-a2653ea0c9c5\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
-C:\Users\Docente\Documents\oneseven-sistemafloristeria-a2653ea0c9c5\oneseven-sistemafloristeria-a2653ea0c9c5\EntitiesLayer\obj\Debug\EntitiesLayer.dll
-C:\Users\Docente\Documents\oneseven-sistemafloristeria-a2653ea0c9c5\oneseven-sistemafloristeria-a2653ea0c9c5\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
