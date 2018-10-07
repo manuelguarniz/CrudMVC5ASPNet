@@ -66,6 +66,13 @@ namespace PresentationLayer.Controllers.Intranet
         {
             try
             {
+                String message = "";
+
+                if (p.idProducto < 0)
+                {
+                    message = "producto no se puede modificar";
+                }
+
                 Boolean var = ProductsBL.Instance.EditProduct(p);
                 if (var)
                 {

@@ -21,16 +21,20 @@ namespace PresentationLayer.Controllers.Intranet
         {
             try
             {
-                EmployeesEL u = EmployeesBL.Instance.VerifyUserAccess(
-                                            frm["txtUser"].ToString(),
-                                            frm["txtPassword"].ToString());
+                String getUser = frm["txtUser"].ToString();
+                String getPassword = frm["txtPassword"].ToString();
 
-                Session["empleado"] = u;
-                return RedirectToAction("PrincipalMain", "Intranet");
-            }
-            catch (ApplicationException ae)
-            {
-                return RedirectToAction("Login", "Intranet", new { msjError = ae.Message });
+                if (String.IsNullOrEmpty(getUser) && String.IsNullOrEmpty(getPassword))
+                {
+                    EmployeesEL u = EmployeesBL.Instance.VerifyUserAccess(getUser, getPassword);
+
+                    Session["empleado"] = u;
+                    return RedirectToAction("PrincipalMain", "Intranet");
+                }
+                else
+                {
+                    return RedirectToAction("Login", "Intranet", new { msjError = "User and Password incorrect" });
+                }
             }
             catch (Exception e)
             {
